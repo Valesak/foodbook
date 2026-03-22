@@ -837,6 +837,7 @@ class DataStore {
   }
 
   searchAlbums(query, filters = {}) {
+    console.log(filters);
     let results = this.albums.slice();
     if (query) {
       const q = query.toLowerCase();

@@ -425,6 +425,7 @@ function doHomeSearch() {
     const filters = {
       ...homeFilters
     };
+    console.log(filters);
     const albums = store.searchAlbums(homeSearchQuery, filters);
     if (albums.length) {
       if (homeSearchTab === 'all') html += '<h2 style="margin:32px 0 16px;font-weight:800;">Albums</h2>';
