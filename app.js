@@ -871,9 +871,11 @@ function renderAlbumDetail() {
         ${!isOwn ? `<button class="btn-follow ${isFollowing?'following':''}" data-action="follow" data-user-id="${author.id}">${isFollowing?'Following':'Follow'}</button>` : ''}
       </div>
       <div class="detail-title">${esc(a.title)}</div>
-      <div class="detail-short-desc">${esc(a.description)}</div>
+      <div class="detail-short-desc">${esc(a.description)}</div>      
       <div class="detail-tags">
         <span class="detail-tag">Album · ${a.recipeIds.length} recipes</span>
+        <span class="detail-tag">${DIFFICULTY_LABELS[a.difficulty]}</span>
+        <span class="detail-tag">${TYPE_LABELS[a.type] || a.type}</span>
         ${a.isPaid ? (isPurchased ? '<span class="detail-tag" style="color:var(--green);border-color:var(--green);">Purchased</span>' : `<span class="detail-tag" style="color:var(--accent2);border-color:var(--accent2);">$${a.price.toFixed(2)}</span>`) : '<span class="detail-tag" style="color:var(--green);border-color:var(--green);">Free</span>'}
       </div>
       <div class="detail-actions">
