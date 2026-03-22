@@ -335,6 +335,7 @@ const DB_ALBUMS = [
   {
     id: 'a1', authorId: 'u2', title: '7-Day Fat Burn Meal Plan',
     description: 'A complete week of calorie-deficit meals designed to maximize fat loss while keeping you satisfied and energized. Each recipe is macro-balanced and gym-approved.',
+    difficulty: 'easy', type: 'comfort',
     coverPhoto: ALBUM_COVERS.fatburn,
     recipeIds: ['r2','r3','r8','r9'],
     isPaid: false, price: 0,
@@ -348,6 +349,7 @@ const DB_ALBUMS = [
   {
     id: 'a2', authorId: 'u2', title: 'Muscle Building Weekly Menu',
     description: 'High-protein recipes for serious gains. Hit your macros with these tasty, gym-bro approved meals. 180g+ protein per day!',
+    difficulty: 'medium', type: 'diet',
     coverPhoto: ALBUM_COVERS.muscle,
     recipeIds: ['r2','r8','r5'],
     isPaid: true, price: 12.99,
@@ -359,6 +361,7 @@ const DB_ALBUMS = [
   {
     id: 'a3', authorId: 'u1', title: 'Italian Classics Collection',
     description: 'My favorite traditional Italian recipes passed down through generations. From pasta to pizza, experience the real taste of Italy.',
+    difficulty: 'hard', type: 'muscle',
     coverPhoto: ALBUM_COVERS.weekly,
     recipeIds: ['r1','r7','r11'],
     isPaid: false, price: 0,
@@ -370,6 +373,7 @@ const DB_ALBUMS = [
   {
     id: 'a4', authorId: 'u5', title: 'Plant-Based Starter Kit',
     description: 'New to veganism? Start here! Easy, affordable, and delicious recipes that will make the transition seamless.',
+    difficulty: 'hard', type: 'diet',
     coverPhoto: ALBUM_COVERS.diet,
     recipeIds: ['r9','r3'],
     isPaid: false, price: 0,

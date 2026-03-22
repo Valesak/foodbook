@@ -1528,6 +1528,15 @@ function renderCreateAlbum(isEdit = false) {
   const recipeIds = a.recipeIds || [];
   const recipes = recipeIds.map(rid => store.getRecipe(rid)).filter(Boolean);
 
+  const diffOptions = Object.entries(DIFFICULTY_LABELS).map(([k,v]) =>
+      `<option value="${k}" ${a.difficulty===k?'selected':''}>${v}</option>`
+  ).join('');
+
+  const typeOptions = Object.entries(TYPE_LABELS).map(([k,v]) =>
+      `<option value="${k}" ${a.type===k?'selected':''}>${v}</option>`
+  ).join('');
+
+
   return `
   <div class="create-page">
     <button class="back-btn" onclick="history.back()" style="color:var(--text-secondary);background:none;border:none;cursor:pointer;font-size:0.88rem;font-weight:600;margin-bottom:20px;">&#8592; Back</button>
@@ -1541,6 +1550,22 @@ function renderCreateAlbum(isEdit = false) {
     <div class="form-group">
       <label>Description</label>
       <textarea id="ca-desc" placeholder="What is this album about...">${esc(a.description||'')}</textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Difficulty</label>
+        <select id="cr-difficulty">${diffOptions}</select>
+      </div>
+      <div class="form-group">
+        <label>Duration (minutes)</label>
+        <input type="number" id="cr-duration" value="${r.duration||''}" min="1" placeholder="e.g. 30" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Type / Category</label>
+      <select id="cr-type">${typeOptions}</select>
     </div>
 
     <div class="form-group">
