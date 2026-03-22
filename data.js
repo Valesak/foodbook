@@ -333,7 +333,7 @@ const DB_RECIPES = [
 // === ALBUMS ===
 const DB_ALBUMS = [
   {
-    id: 'a1', authorId: 'u2', title: '6',
+    id: 'a1', authorId: 'u2', title: '7-Day Fat Burn Meal Plan',
     description: 'A complete week of calorie-deficit meals designed to maximize fat loss while keeping you satisfied and energized. Each recipe is macro-balanced and gym-approved.',
     difficulty: 'easy', type: 'comfort',
     coverPhoto: ALBUM_COVERS.fatburn,
@@ -844,6 +844,8 @@ class DataStore {
         a.title.toLowerCase().includes(q) || a.description.toLowerCase().includes(q)
       );
     }
+    if (filters.difficulty) results = results.filter(a => a.difficulty === filters.difficulty);
+    if (filters.type) results = results.filter(a => a.type === filters.type);
     if (filters.paidFilter === 'free') results = results.filter(a => !a.isPaid);
     if (filters.paidFilter === 'paid') results = results.filter(a => a.isPaid);
     return results;
