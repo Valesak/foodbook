@@ -333,7 +333,7 @@ const DB_RECIPES = [
 // === ALBUMS ===
 const DB_ALBUMS = [
   {
-    id: 'a1', authorId: 'u2', title: '7-Day Fat Burn Meal Plan',
+    id: 'a1', authorId: 'u2', title: '6',
     description: 'A complete week of calorie-deficit meals designed to maximize fat loss while keeping you satisfied and energized. Each recipe is macro-balanced and gym-approved.',
     difficulty: 'easy', type: 'comfort',
     coverPhoto: ALBUM_COVERS.fatburn,
