@@ -823,6 +823,7 @@ function bindRecipeDetailEvents() {
 // --- ALBUM DETAIL ---
 function renderAlbumDetail() {
   const a = store.getAlbum(routeParams.id);
+  console.log(a);
   if (!a) return '<div class="container">' + emptyState('Album not found') + '</div>';
 
   const author = store.getUser(a.authorId);
