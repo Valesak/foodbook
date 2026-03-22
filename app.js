@@ -873,6 +873,7 @@ function renderAlbumDetail() {
       <div class="detail-title">${esc(a.title)}</div>
       <div class="detail-short-desc">${esc(a.description)}</div>      
       <div class="detail-tags">
+       ${a.difficulty} | ${a.type}
         <span class="detail-tag">Album · ${a.recipeIds.length} recipes</span>
         <span class="detail-tag">${DIFFICULTY_LABELS[a.difficulty]}</span>
         <span class="detail-tag">${TYPE_LABELS[a.type] || a.type}</span>
