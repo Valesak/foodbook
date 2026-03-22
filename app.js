@@ -298,15 +298,15 @@ function renderHome() {
 function renderFilterPanel(homeSearchTab) {
 
   const diffOptions = ['','easy','medium','hard'].map(v =>
-    `<option value="${v}" ${homeFilters.difficulty===v?'selected':''}>${v?DIFFICULTY_LABELS[v]:'Any'}</option>`
+      `<option value="${v}" ${homeFilters.difficulty===v?'selected':''}>${v?DIFFICULTY_LABELS[v]:'Any'}</option>`
   ).join('');
 
   const typeOptions = ['', ...Object.keys(TYPE_LABELS)].map(v =>
-    `<option value="${v}" ${homeFilters.type===v?'selected':''}>${v?TYPE_LABELS[v]:'Any'}</option>`
+      `<option value="${v}" ${homeFilters.type===v?'selected':''}>${v?TYPE_LABELS[v]:'Any'}</option>`
   ).join('');
 
   const paidOptions = ['','free','paid'].map(v =>
-    `<option value="${v}" ${homeFilters.paidFilter===v?'selected':''}>${v==='free'?'Free Only':v==='paid'?'Paid Only':'All'}</option>`
+      `<option value="${v}" ${homeFilters.paidFilter===v?'selected':''}>${v==='free'?'Free Only':v==='paid'?'Paid Only':'All'}</option>`
   ).join('');
 
   if(homeSearchTab === 'albums'){
@@ -874,7 +874,6 @@ function renderAlbumDetail() {
       <div class="detail-title">${esc(a.title)}</div>
       <div class="detail-short-desc">${esc(a.description)}</div>      
       <div class="detail-tags">
-       ${a.difficulty} | ${a.type}
         <span class="detail-tag">Album · ${a.recipeIds.length} recipes</span>
         <span class="detail-tag">${DIFFICULTY_LABELS[a.difficulty]}</span>
         <span class="detail-tag">${TYPE_LABELS[a.type] || a.type}</span>
