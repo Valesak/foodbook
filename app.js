@@ -422,7 +422,10 @@ function doHomeSearch() {
   }
 
   if (homeSearchTab === 'all' || homeSearchTab === 'albums') {
-    const albums = store.searchAlbums(homeSearchQuery, { paidFilter: homeFilters.paidFilter });
+    const filters = {
+      ...homeFilters
+    };
+    const albums = store.searchAlbums(homeSearchQuery, filters);
     if (albums.length) {
       if (homeSearchTab === 'all') html += '<h2 style="margin:32px 0 16px;font-weight:800;">Albums</h2>';
       html += `<div class="cards-grid">${albums.map(a => renderAlbumCard(a)).join('')}</div>`;
