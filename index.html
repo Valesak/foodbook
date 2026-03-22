@@ -1,50 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foodgram — Share & Discover Recipes</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foodgram — Recipe Social Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>" />
 </head>
 <body>
-
-  <!-- ======= AUTH SCREEN ======= -->
-  <div class="auth-screen" id="auth-screen">
-    <div class="auth-card">
-      <div class="logo">
-        <h1>Foodgram</h1>
-        <p>Share & Discover Amazing Recipes</p>
-      </div>
-      <div id="auth-card-body"></div>
-    </div>
-  </div>
-
-  <!-- ======= MAIN APP ======= -->
-  <div class="app-container" id="app">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a class="nav-logo" onclick="navigate('home')">Foodgram</a>
-      <div class="nav-search">
-        <span class="search-icon">🔍</span>
-        <input type="text" placeholder="Search recipes, albums, accounts...">
-      </div>
-      <div class="nav-actions">
-        <div class="create-btn-wrap" style="position:relative">
-          <button class="nav-btn" onclick="toggleCreateDropdown()" title="Create">✏️</button>
-          <div class="create-dropdown" id="create-dropdown">
-            <a onclick="navigate('create-recipe');toggleCreateDropdown()">🍳 New Recipe</a>
-            <a onclick="createAlbumRecipes=[];navigate('create-album');toggleCreateDropdown()">📚 New Album</a>
-          </div>
-        </div>
-        <button class="nav-btn" id="nav-user-btn" onclick="navigate('myprofile')" title="My Profile">👤</button>
-      </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="main-content" id="main-content"></div>
-  </div>
-
+  <div id="app"></div>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
