@@ -837,7 +837,6 @@ class DataStore {
   }
 
   searchAlbums(query, filters = {}) {
-    console.log(filters);
     let results = this.albums.slice();
     if (query) {
       const q = query.toLowerCase();
@@ -849,7 +848,6 @@ class DataStore {
     if (filters.type) results = results.filter(a => a.type === filters.type);
     if (filters.paidFilter === 'free') results = results.filter(a => !a.isPaid);
     if (filters.paidFilter === 'paid') results = results.filter(a => a.isPaid);
-    results = [];
     return results;
   }
 
