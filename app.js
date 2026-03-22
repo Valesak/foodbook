@@ -1557,10 +1557,6 @@ function renderCreateAlbum(isEdit = false) {
         <label>Difficulty</label>
         <select id="cr-difficulty">${diffOptions}</select>
       </div>
-      <div class="form-group">
-        <label>Duration (minutes)</label>
-        <input type="number" id="cr-duration" value="${r.duration||''}" min="1" placeholder="e.g. 30" />
-      </div>
     </div>
 
     <div class="form-group">
