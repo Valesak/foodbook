@@ -288,14 +288,15 @@ function renderHome() {
 
     ${homeSearchTab !== 'users' ? `
     <button class="filter-toggle" id="btn-toggle-filters">${homeShowFilters ? 'Hide Filters' : 'Show Filters'}</button>
-    ${homeShowFilters ? renderFilterPanel() : ''}
+    ${homeShowFilters ? renderFilterPanel(homeSearchTab) : ''}
     ` : ''}
 
     <div id="home-results"></div>
   </div>`;
 }
 
-function renderFilterPanel() {
+function renderFilterPanel(homeSearchTab) {
+
   const diffOptions = ['','easy','medium','hard'].map(v =>
     `<option value="${v}" ${homeFilters.difficulty===v?'selected':''}>${v?DIFFICULTY_LABELS[v]:'Any'}</option>`
   ).join('');
@@ -308,6 +309,31 @@ function renderFilterPanel() {
     `<option value="${v}" ${homeFilters.paidFilter===v?'selected':''}>${v==='free'?'Free Only':v==='paid'?'Paid Only':'All'}</option>`
   ).join('');
 
+  if(homeSearchTab === 'albums'){
+    return `
+  <div class="filter-panel">
+    <h3>&#9881; Filters</h3>
+    <div class="filter-row">
+      <div class="filter-group">
+        <label>Difficulty</label>
+        <select id="filter-difficulty">${diffOptions}</select>
+      </div>
+      <div class="filter-group">
+        <label>Type</label>
+        <select id="filter-type">${typeOptions}</select>
+      </div>
+      <div class="filter-group">
+        <label>Price</label>
+        <select id="filter-paid">${paidOptions}</select>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button class="btn-filter primary" id="btn-apply-filters">Apply Filters</button>
+      <button class="btn-filter secondary" id="btn-clear-filters">Clear</button>
+    </div>
+  </div>`;
+  } else {
   return `
   <div class="filter-panel">
     <h3>&#9881; Filters</h3>
@@ -353,6 +379,7 @@ function renderFilterPanel() {
       <button class="btn-filter secondary" id="btn-clear-filters">Clear</button>
     </div>
   </div>`;
+  }
 }
 
 function doHomeSearch() {
